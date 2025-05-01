@@ -93,12 +93,24 @@ fetch('ukraine_oblasts.geojson')
                             <p><strong>Languages:</strong> ${details.languages}</p>
                             <p><strong>Emergency:</strong> ${details.emergency}</p>
                         `;
+                        // Position and display the info box near the cursor
+                        const containerPoint = e.containerPoint; // Mouse coordinates relative to the map container
+                        infoBox.style.left = (containerPoint.x + 15) + 'px'; // Offset slightly right
+                        infoBox.style.top = (containerPoint.y + 15) + 'px';  // Offset slightly down
                         infoBox.style.display = 'block';
                     },
                     mouseout: function(e) {
                          geoJsonLayer.resetStyle(e.target);
+                         // Hide the info box when mouse leaves the feature
                          infoBox.style.display = 'none';
                     }
+                    // --- Optional: Add mousemove to continuously update position ---
+                    // mousemove: function(e) {
+                    //     // If you want the box to follow precisely while moving OVER the feature
+                    //     const containerPoint = e.containerPoint;
+                    //     infoBox.style.left = (containerPoint.x + 15) + 'px';
+                    //     infoBox.style.top = (containerPoint.y + 15) + 'px';
+                    // }
                 });
             }
         });
