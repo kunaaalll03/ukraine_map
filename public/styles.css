@@ -10,9 +10,9 @@ html, body {
     height: 100%;
 }
 
+/* Info Box Styling (positioned by JS) */
 #info-box {
     position: absolute; /* Needed for JS positioning */
-    /* top and left will be set by JavaScript */
     width: 250px;
     background-color: rgba(255, 255, 255, 0.95); /* Slightly less transparent */
     border: 1px solid #aaa; /* Slightly darker border */
@@ -40,6 +40,7 @@ html, body {
     font-weight: bold;
 }
 
+/* Risk Level Badge Styling */
 .risk-level {
     display: inline-block;
     padding: 2px 6px;
@@ -47,7 +48,7 @@ html, body {
     color: white;
     font-weight: bold;
 }
-.risk-high { background-color: #d9534f; }
-.risk-medium { background-color: #f0ad4e; }
-.risk-low { background-color: #5cb85c; }
-.risk-unknown { background-color: #777; }
+.risk-high { background-color: #d9534f; } /* Red */
+.risk-medium { background-color: #f0ad4e; } /* Orange/Yellow */
+.risk-low { background-color: #5cb85c; } /* Green */
+.risk-unknown { background-color: #777; } /* Gray */
