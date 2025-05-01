@@ -9,12 +9,32 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const infoBox = document.getElementById('info-box');
 
 // --- Risk Level Templates ---
-// Define the basic structure for each risk level
+// Define the basic structure with improved placeholder advice
 const riskTemplates = {
-    high: { riskLevel: "High Risk", riskClass: "risk-high", safetyAdvice: "Randomly assigned High Risk.", currency: "UAH", languages: "Ukrainian", emergency: "112" },
-    medium: { riskLevel: "Medium Risk", riskClass: "risk-medium", safetyAdvice: "Randomly assigned Medium Risk.", currency: "UAH", languages: "Ukrainian", emergency: "112" },
-    low: { riskLevel: "Low Risk", riskClass: "risk-low", safetyAdvice: "Randomly assigned Low Risk.", currency: "UAH", languages: "Ukrainian", emergency: "112" },
-    default: { riskLevel: "Unknown", riskClass: "risk-unknown", safetyAdvice: "Data unavailable.", currency: "UAH", languages: "Ukrainian", emergency: "112" }
+    high: {
+        riskLevel: "High Risk",
+        riskClass: "risk-high",
+        safetyAdvice: "Travel likely discouraged or restricted due to severe conditions. Exercise extreme caution. Monitor official channels constantly.", // Updated advice
+        currency: "UAH", languages: "Ukrainian", emergency: "112"
+    },
+    medium: {
+        riskLevel: "Medium Risk",
+        riskClass: "risk-medium",
+        safetyAdvice: "Exercise increased caution. Be aware of your surroundings and potential localized risks. Follow local authorities' guidance.", // Updated advice
+        currency: "UAH", languages: "Ukrainian", emergency: "112"
+    },
+    low: {
+        riskLevel: "Low Risk",
+        riskClass: "risk-low",
+        safetyAdvice: "Exercise normal safety precautions. Remain vigilant, especially in unfamiliar areas. Stay informed about current events.", // Updated advice
+        currency: "UAH", languages: "Ukrainian", emergency: "112"
+    },
+    default: { // Fallback if something goes wrong
+        riskLevel: "Unknown",
+        riskClass: "risk-unknown",
+        safetyAdvice: "Risk level data unavailable for this area. Check official travel advisories.",
+        currency: "UAH", languages: "Ukrainian", emergency: "112"
+    }
 };
 
 // --- Helper function to extract oblast name ---
